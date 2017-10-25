@@ -1,14 +1,11 @@
 package org.usfirst.frc.team1683.driveTrain;
 
-import org.usfirst.frc.team1683.motor.MotorGroup;
 import org.usfirst.frc.team1683.sensors.Encoder;
+
+import org.usfirst.frc.team1683.motors.MotorGroup;
 import org.usfirst.frc.team1683.sensors.Gyro;
 
-/*
- * Controls tank drive
- */
-public class TankDrive implements DriveTrain {
-
+public class TankDrive implements DriveTrain{
 	private MotorGroup left;
 	private MotorGroup right;
 	private Gyro gyro;
@@ -22,9 +19,9 @@ public class TankDrive implements DriveTrain {
 		this.left = left;
 		this.right = right;
 		this.gyro = gyro;
-		// this.gyro.reset();
+		this.gyro.reset(); //1683 has this commented out
 	}
-
+	
 	@Override
 	public void set(double speed) {
 		left.set(speed);
@@ -68,7 +65,6 @@ public class TankDrive implements DriveTrain {
 		right.stop();
 	}
 
-	@Override
 	public void driveMode(double leftSpeed, double rightSpeed) {
 		left.enableBrakeMode(false);
 		right.enableBrakeMode(false);
@@ -87,7 +83,7 @@ public class TankDrive implements DriveTrain {
 		return right.getEncoder();
 	}
 
-	@Override
+
 	public void resetEncoders() {
 		left.getEncoder().reset();
 		right.getEncoder().reset();
@@ -102,21 +98,7 @@ public class TankDrive implements DriveTrain {
 	public MotorGroup getRightGroup() {
 		return right;
 	}
-
-	// public void enableAntiDrift() {
-	/// left.enableAntiDrift(antiDrift);
-	// right.enableAntiDrift(antiDrift);
-	// }
-
-	// public void disableAntiDrift() {
-	// left.disableAntiDrift();
-	// right.disableAntiDrift();
-	// }
-
-	// public boolean isAntiDriftEnabled() {
-	// return left.isAntiDriftEnabled() && right.isAntiDriftEnabled();
-	// }
-
+	
 	public Gyro getGyro() {
 		return gyro;
 	}
@@ -124,4 +106,6 @@ public class TankDrive implements DriveTrain {
 	public boolean hasGyro() {
 		return !(gyro == null);
 	}
+	
+	
 }

@@ -1,21 +1,16 @@
 package org.usfirst.frc.team1683.sensors;
 
-import org.usfirst.frc.team1683.motor.TalonSRX;
+import org.usfirst.frc.team1683.motors.TalonSRX;
 
 import com.ctre.CANTalon.FeedbackDevice;
 
-/**
- * Encoder class. Used to measure how far the robot traveled
- */
-
 public class QuadEncoder implements Encoder {
-
 	private TalonSRX talonSRX;
 	private double wheelRadius;
 
 	public QuadEncoder(TalonSRX talonSRX, double wheelRadius) {
 		this.talonSRX = talonSRX;
-		this.talonSRX.setFeedbackDevice(FeedbackDevice.CtreMagEncoder_Relative);
+		//this.talonSRX.setFeedbackDevice(FeedbackDevice.CtreMagEncoder_Relative);
 
 		this.wheelRadius = wheelRadius;
 	}
@@ -49,4 +44,5 @@ public class QuadEncoder implements Encoder {
 	public TalonSRX getTalon() {
 		return talonSRX;
 	}
+
 }
