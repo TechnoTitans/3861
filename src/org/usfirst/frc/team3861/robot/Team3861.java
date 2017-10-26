@@ -33,6 +33,8 @@ public class Team3861 extends IterativeRobot {
 		leftGroup = new MotorGroup(leftFrontTalon, leftBackTalon);
 		rightGroup = new MotorGroup(rightFrontTalon, rightBackTalon);
 		
+		drive = new TankDrive(leftGroup, rightGroup, gyro);
+		
 		//TODO write and then enable the antidrifts here
 		controls = new Controls(drive);
 		
