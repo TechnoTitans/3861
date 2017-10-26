@@ -27,13 +27,14 @@ public class Team3861 extends IterativeRobot {
 		TalonSRX rightMiddleTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_MIDDLE, false);
 		TalonSRX rightBackTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_BACK, false);
 		TalonSRX leftFrontTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_FRONT, false);
-		TalonSRX leftFrontTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_MIDDLE, false);
+		TalonSRX leftMiddleTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_MIDDLE, false);
 		TalonSRX leftBackTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_BACK, false);
 		
 		
 		//TODO add the QuadEncoders once we finish
-		leftGroup = new MotorGroup(leftFrontTalon, leftBackTalon);
-		rightGroup = new MotorGroup(rightFrontTalon, rightBackTalon);
+		leftGroup = new MotorGroup(leftFrontTalon, leftMiddleTalon, leftBackTalon);
+		rightGroup = new MotorGroup(rightFrontTalon, rightMiddleTalon, rightBackTalon);
+
 		
 		//TODO write and then enable the antidrifts here
 		controls = new Controls(drive);

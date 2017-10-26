@@ -9,7 +9,7 @@ public class Controls {
 
 	private double rSpeed;
 	private double lSpeed;
-	private double maxPower = 1.0;
+	private double maxPower = .5;
 
 	private final double MAX_JOYSTICK_SPEED = 0.5;
 	private final double SECOND_JOYSTICK_SPEED = 0.35;
