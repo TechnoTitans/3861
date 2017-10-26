@@ -24,8 +24,10 @@ public class Team3861 extends IterativeRobot {
 	public void robotInit() {
 		gyro = new Gyro(HWR.GYRO);
 		TalonSRX rightFrontTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_FRONT, false);
+		TalonSRX rightMiddleTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_MIDDLE, false);
 		TalonSRX rightBackTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_BACK, false);
 		TalonSRX leftFrontTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_FRONT, false);
+		TalonSRX leftFrontTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_MIDDLE, false);
 		TalonSRX leftBackTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_BACK, false);
 		
 		
