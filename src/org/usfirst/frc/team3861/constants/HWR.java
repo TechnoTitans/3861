@@ -7,7 +7,7 @@ public class HWR {
 	public static final int RIGHT_DRIVE_TRAIN_BACK = HWP.CAN_9;
 	public static final int LEFT_DRIVE_TRAIN_FRONT = HWP.CAN_6;
 	public static final int LEFT_DRIVE_TRAIN_BACK = HWP.CAN_4;
-
+	
 	// encoders
 	public static final int LEFT_DRIVE_ENCODER = HWP.CAN_7;
 	public static final int RIGHT_DRIVE_ENCODER = HWP.CAN_6;
@@ -25,4 +25,9 @@ public class HWR {
 	public static final int SECOND_POWER = HWP.BUTTON_6;
 
 	public static final int OVERRIDE_TIMER = HWP.BUTTON_9;
+	
+	// ball controller
+	public static final int FLYWHEEL= -99; //TODO get real number
+	public static final int BELT = -99; //TODO get real number
+	
 }

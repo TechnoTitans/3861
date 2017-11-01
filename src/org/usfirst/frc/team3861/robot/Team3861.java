@@ -2,10 +2,15 @@ package org.usfirst.frc.team3861.robot;
 
 import org.usfirst.frc.team3861.constants.HWR;
 import org.usfirst.frc.team3861.driveTrain.TankDrive;
-import edu.wpi.first.wpilibj.IterativeRobot;
 import org.usfirst.frc.team3861.motors.MotorGroup;
 import org.usfirst.frc.team3861.motors.TalonSRX;
+import org.usfirst.frc.team3861.scoring.Ball;
+import org.usfirst.frc.team3861.scoring.Belt;
+import org.usfirst.frc.team3861.scoring.Flywheel;
 import org.usfirst.frc.team3861.sensors.Gyro;
+import org.usfirst.frc.team3861.vision.VisionReader;
+
+import edu.wpi.first.wpilibj.IterativeRobot;
 
 public class Team3861 extends IterativeRobot {
 
@@ -16,6 +21,11 @@ public class Team3861 extends IterativeRobot {
 	MotorGroup leftGroup;
 	MotorGroup rightGroup;
 	
+	Flywheel flywheel;
+	Belt belt;
+	Ball ball;
+	
+	VisionReader vision;
 	
 	// TODO !!!!!!!
 	// fix port numbers in constant class; get from electrical
@@ -24,11 +34,15 @@ public class Team3861 extends IterativeRobot {
 	
 	public void robotInit() {
 		gyro = new Gyro(HWR.GYRO);
+		flywheel = new Flywheel(HWR.FLYWHEEL);
+		belt = new Belt(HWR.BELT);
+		ball = new Ball(flywheel, belt);
 		TalonSRX rightFrontTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_FRONT, false);
 		TalonSRX rightBackTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_BACK, false);
 		TalonSRX leftFrontTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_FRONT, false);
 		TalonSRX leftBackTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_BACK, false);
 		
+		vision = new VisionReader();
 		
 		//TODO add the QuadEncoders once we finish
 		leftGroup = new MotorGroup(leftFrontTalon, leftBackTalon);
@@ -38,7 +52,8 @@ public class Team3861 extends IterativeRobot {
 		
 		//TODO write and then enable the antidrifts here
 		
-		controls = new Controls(drive);
+		//TODO add ball flywheel
+		controls = new Controls(drive, ball);
 		
 	}
 
