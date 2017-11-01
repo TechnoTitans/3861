@@ -1,12 +1,15 @@
 package org.usfirst.frc.team3861.motors;
 
 import com.ctre.CANTalon;
+import com.ctre.CANTalon.TalonControlMode;
+
+import org.usfirst.frc.team3861.driveTrain.AntiDrift;
 import org.usfirst.frc.team3861.sensors.*;
 
 public class TalonSRX extends CANTalon implements Motor {
 	private Encoder encoder;
 	
-	//AntiDrift anti;
+	AntiDrift anti;
 	
 	Gyro gyro;
 	
@@ -33,50 +36,87 @@ public class TalonSRX extends CANTalon implements Motor {
 		this.encoder = encoder;
 	}
 	
-	@Override
-	public void setEncoder(Encoder encoder) {
+	public TalonSRX(int channel, boolean reversed, AntiDrift anti) {
+		super(channel);
+		super.setInverted(reversed);
+		this.anti = anti;
+	}
+	
+	public TalonSRX(int channel, boolean reversed, AntiDrift anti, Encoder encoder) {
+		super(channel);
+		super.setInverted(reversed);
+		this.anti = anti;
 		this.encoder = encoder;
 	}
-
+	
+	/**
+	 * Set the speed of the TalonSRX.
+	 *
+	 * @param speed
+	 *            -- Speed from 0 to 1.
+	 */
+	@Override
+	public void set(double speed) {
+		super.changeControlMode(TalonControlMode.PercentVbus);
+		super.set(speed);
+		super.enableControl();
+	}
+	
+	/**
+	 * @return speed of TalonSRX in RPM
+	 */
+	
+	@Override
+	public double getSpeed() {
+		return (super.getSpeed() * 60) / (4096 * 0.1);
+	}
 	@Override
 	public void stop() {
-		// do stuff
-		
+		// super.enableBrakeMode(true);
+		super.disableControl();
 	}
 
 	@Override
 	public void brake() {
-		// TODO Auto-generated method stub
-		
+		super.enableBrakeMode(true);
+		super.disableControl();
 	}
 
 	@Override
 	public void coast() {
-		// TODO Auto-generated method stub
-		
+		super.enableBrakeMode(false);
+		super.disableControl();
 	}
 
 	@Override
 	public boolean hasEncoder() {
-		// TODO Auto-generated method stub
-		return false;
+		return !(encoder == null);
 	}
 
 	@Override
 	public Encoder getEncoder() {
-		// TODO Auto-generated method stub
-		return null;
+		return encoder;
+	}
+
+	public void setEncoder(Encoder encoder) {
+		this.encoder = encoder;
+	}
+
+	// TODO: make sure this works.
+	@Override
+	public int getChannel() {
+		return super.getDeviceID();
 	}
 
 	@Override
-	public int getChannel() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double getError() {
+		return super.getError();
 	}
 
 	@Override
 	public boolean isReversed() {
-		// TODO Auto-generated method stub
-		return false;
+		return super.getInverted();
 	}
+	
+
 }

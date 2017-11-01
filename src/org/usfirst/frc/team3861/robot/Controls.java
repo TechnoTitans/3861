@@ -30,7 +30,7 @@ public class Controls {
 		
 		drive.driveMode(lSpeed, rSpeed);
 		
-		//implement scoring
+		//TODO figure out joysticks
 		ball.intake();
 		ball.shoot();
 		
