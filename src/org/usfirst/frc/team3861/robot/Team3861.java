@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3861.robot;
 
+import org.usfirst.frc.team3861.autonomous.AutonomousRunner;
 import org.usfirst.frc.team3861.constants.HWR;
 import org.usfirst.frc.team3861.driveTrain.TankDrive;
 import org.usfirst.frc.team3861.motors.MotorGroup;
@@ -26,17 +27,19 @@ public class Team3861 extends IterativeRobot {
 	Ball ball;
 	
 	VisionReader vision;
+	AutonomousRunner autonomous;
 	
 	// TODO !!!!!!!
 	// fix port numbers in constant class; get from electrical
 	// TODO !!!!!!!
 	
-	
+	@Override
 	public void robotInit() {
 		gyro = new Gyro(HWR.GYRO);
-		flywheel = new Flywheel(HWR.FLYWHEEL);
-		belt = new Belt(HWR.BELT);
-		ball = new Ball(flywheel, belt);
+//		flywheel = new Flywheel(HWR.FLYWHEEL);
+//		belt = new Belt(HWR.BELT);
+//		ball = new Ball(flywheel, belt);
+
 		TalonSRX rightFrontTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_FRONT, false);
 		TalonSRX rightBackTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_BACK, false);
 		TalonSRX leftFrontTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_FRONT, false);
@@ -59,18 +62,23 @@ public class Team3861 extends IterativeRobot {
 
 	// TODO implement autonomous code
 	// once we are finished with 
+	
+	@Override
 	public void autonomousInit() {
-		
+		autonomous = new AutonomousRunner(drive);
 	}
 
+	@Override
 	public void autonomousPeriodic() {
 
 	}
 
+	@Override
 	public void teleopInit() {
 
 	}
 
+	@Override
 	public void teleopPeriodic() {
 		controls.run();
 	}

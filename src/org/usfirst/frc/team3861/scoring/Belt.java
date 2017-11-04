@@ -2,6 +2,7 @@ package org.usfirst.frc.team3861.scoring;
 
 import org.usfirst.frc.team3861.motors.TalonSRX;
 
+@Deprecated
 public class Belt implements ScoringMotor{
 	
 	TalonSRX beltMotor;

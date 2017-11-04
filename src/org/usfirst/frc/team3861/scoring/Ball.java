@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3861.scoring;
 
+
+@Deprecated
 public class Ball {
 	
 	Flywheel flywheel;

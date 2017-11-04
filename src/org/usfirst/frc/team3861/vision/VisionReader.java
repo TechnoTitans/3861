@@ -13,6 +13,10 @@ public class VisionReader {
 	}
 	
 	public double getDistance() {
-		return (double) table.getValue("distance", 0.0);
+		return (double) table.getNumber("distance", 0.0);
+	}
+	
+	public double getAngle() {
+		return (double) table.getNumber("angle", 0.0); 
 	}
 }
