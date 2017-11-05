@@ -8,7 +8,6 @@ public class VisionReader {
 	
 	public void init() {
 		NetworkTable.setClientMode();
-//		NetworkTable.setIPAddress("0.0.0.0"); // TODO find real ip address
 		table = NetworkTable.getTable("vision");
 	}
 	
