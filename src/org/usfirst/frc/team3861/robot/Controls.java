@@ -2,12 +2,14 @@ package org.usfirst.frc.team3861.robot;
 
 import org.usfirst.frc.team3861.driveTrain.DriveTrain;
 import org.usfirst.frc.team3861.driverStation.DriverSetup;
-
-import org.usfirst.frc.team3861.driveTrain.TankDrive;
+import org.usfirst.frc.team3861.scoring.Door;
+import org.usfirst.frc.team3861.scoring.Shooter;
 
 public class Controls {
 	
 	DriveTrain drive;
+	Shooter shooter;
+	Door door;
 
 	private double rSpeed;
 	private double lSpeed;
@@ -16,7 +18,7 @@ public class Controls {
 	private final double MAX_JOYSTICK_SPEED = 0.5;
 	private final double SECOND_JOYSTICK_SPEED = 0.35;
 
-	public Controls(DriveTrain drive) {
+	public Controls(DriveTrain drive, Shooter shooter, Door door) {
 		
 		this.drive = drive;
 		

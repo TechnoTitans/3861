@@ -27,7 +27,7 @@ public class HWR {
 	public static final int OVERRIDE_TIMER = HWP.BUTTON_9;
 	
 	// ball controller
-	public static final int FLYWHEEL= -99; //TODO get real number
-	public static final int BELT = -99; //TODO get real number
+	public static final int SHOOTER= -99; //TODO get real number
+	public static final int DOOR = -99; //TODO get real number
 	
 }

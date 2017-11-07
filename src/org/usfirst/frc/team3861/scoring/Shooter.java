@@ -6,7 +6,6 @@ public class Shooter {
 	
 	Solenoid solenoid;
 	
-	
 	private Shooter() {}
 	
 	public Shooter(int channel) {

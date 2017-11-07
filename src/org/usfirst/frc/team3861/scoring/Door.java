@@ -10,7 +10,7 @@ public class Door {
 	@SuppressWarnings("unused")
 	private Door() {}
 	
-	private double speed = 0.3; //TODO find value
+	private double speed = 0.2; //TODO find value
 	
 	private TalonSRX doorMotor;
 	
@@ -24,10 +24,11 @@ public class Door {
 	
 	
 	public void setSpeed(double speed) {
-		if (speed > 1)
-			speed = 1;
-		if (speed < 0)
-			speed = 0;
+		speed = speed/3;
+		if (speed > .3)
+			speed = .3;
+		if (speed < -.3)
+			speed = -.3;
 		this.speed = speed;
 	}
 	
