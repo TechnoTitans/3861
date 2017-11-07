@@ -7,16 +7,15 @@ import org.usfirst.frc.team3861.motors.TalonSRX;
 // ball
 public class Door {
 	
-	
 	@SuppressWarnings("unused")
 	private Door() {}
 	
-	private static final double DOOR_MOTOR_SPEED = 0.3;
+	private double speed = 0.3; //TODO find value
 	
 	private TalonSRX doorMotor;
 	
-	public Door(TalonSRX motor) {
-		this.doorMotor = motor;	
+	public Door(int channel) {
+		this.doorMotor = new TalonSRX(channel, true);	//TODO channel inverted
 	}
 
 	// TODO Implement close and open methods
@@ -24,12 +23,17 @@ public class Door {
 	// use small speed values
 	
 	
-	public void close() {
-
+	public void setSpeed(double speed) {
+		if (speed > 1)
+			speed = 1;
+		if (speed < 0)
+			speed = 0;
+		this.speed = speed;
 	}
 	
-	public void open() {
-		
+	public void change() {
+		doorMotor.set(speed); //might need to set to negative speed
 	}
+
 	
 }
