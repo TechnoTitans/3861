@@ -5,6 +5,10 @@ import org.usfirst.frc.team3861.constants.HWR;
 import org.usfirst.frc.team3861.driveTrain.TankDrive;
 import org.usfirst.frc.team3861.motors.MotorGroup;
 import org.usfirst.frc.team3861.motors.TalonSRX;
+<<<<<<< HEAD
+=======
+import org.usfirst.frc.team3861.scoring.Door;
+>>>>>>> refs/remotes/origin/master
 import org.usfirst.frc.team3861.scoring.Shooter;
 import org.usfirst.frc.team3861.sensors.Gyro;
 import org.usfirst.frc.team3861.vision.VisionReader;
@@ -14,6 +18,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 public class Team3861 extends IterativeRobot {
 
 	TankDrive drive;
+	Shooter shooter;
+	Door door;
 	Controls controls;
 	
 	Gyro gyro;
@@ -45,10 +51,13 @@ public class Team3861 extends IterativeRobot {
 		rightGroup = new MotorGroup(rightFrontTalon, rightBackTalon);
 		
 		drive = new TankDrive(leftGroup, rightGroup, gyro);
+		shooter = new Shooter(HWR.SHOOTER);
+		door = new Door(HWR.DOOR);
 		
 		//TODO write and then enable the antidrifts here
 		
-		controls = new Controls(drive);
+		controls = new Controls(drive, shooter, door);
+		
 		
 	}
 
@@ -57,7 +66,7 @@ public class Team3861 extends IterativeRobot {
 	
 	@Override
 	public void autonomousInit() {
-		autonomous = new AutonomousRunner(drive);
+		autonomous = new AutonomousRunner(drive, shooter);
 	}
 
 	@Override

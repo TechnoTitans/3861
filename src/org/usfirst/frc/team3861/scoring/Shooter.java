@@ -10,10 +10,13 @@ public class Shooter {
 	boolean isShooting = true;
 	boolean hasDoneFirstShot = false;
 	
+<<<<<<< HEAD
 	Timer timer = new Timer();
 	public static final double DELAY = 3.0;
 	
 	@SuppressWarnings("unused")
+=======
+>>>>>>> refs/remotes/origin/master
 	private Shooter() {}
 	
 	public Shooter(int channel) {
