@@ -11,5 +11,7 @@ public class DriverSetup {
 	// joysticks
 	public static Joystick leftStick = new Joystick(HWR.LEFT_JOYSTICK);
 	public static Joystick rightStick = new Joystick(HWR.RIGHT_JOYSTICK);
+	public static Joystick auxStick = new Joystick(HWR.AUX_JOYSTICK);
+
 
 }

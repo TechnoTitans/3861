@@ -10,8 +10,6 @@ public class Door {
 	@SuppressWarnings("unused")
 	private Door() {}
 	
-	private double speed = 0.2; //TODO find value
-	
 	private TalonSRX doorMotor;
 	
 	public Door(int channel) {
@@ -23,16 +21,12 @@ public class Door {
 	// use small speed values
 	
 	
-	public void setSpeed(double speed) {
+	public void run(double speed) {
 		speed = speed/3;
 		if (speed > .3)
 			speed = .3;
 		if (speed < -.3)
 			speed = -.3;
-		this.speed = speed;
-	}
-	
-	public void change() {
 		doorMotor.set(speed); //might need to set to negative speed
 	}
 
