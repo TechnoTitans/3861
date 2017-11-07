@@ -57,7 +57,7 @@ public class Team3861 extends IterativeRobot {
 	
 	@Override
 	public void autonomousInit() {
-		autonomous = new AutonomousRunner(drive, shooter);
+		autonomous = new AutonomousRunner(drive);
 	}
 
 	@Override
