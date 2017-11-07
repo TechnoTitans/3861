@@ -5,6 +5,7 @@ import org.usfirst.frc.team3861.constants.HWR;
 import org.usfirst.frc.team3861.driveTrain.TankDrive;
 import org.usfirst.frc.team3861.motors.MotorGroup;
 import org.usfirst.frc.team3861.motors.TalonSRX;
+import org.usfirst.frc.team3861.scoring.Shooter;
 import org.usfirst.frc.team3861.sensors.Gyro;
 import org.usfirst.frc.team3861.vision.VisionReader;
 
@@ -18,6 +19,7 @@ public class Team3861 extends IterativeRobot {
 	Gyro gyro;
 	MotorGroup leftGroup;
 	MotorGroup rightGroup;
+	Shooter shooter;
 	
 	VisionReader vision;
 	AutonomousRunner autonomous;
@@ -29,7 +31,8 @@ public class Team3861 extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		gyro = new Gyro(HWR.GYRO);
-
+		shooter = new Shooter(HWR.SHOOTER);
+		
 		TalonSRX rightFrontTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_FRONT, false);
 		TalonSRX rightBackTalon = new TalonSRX(HWR.RIGHT_DRIVE_TRAIN_BACK, false);
 		TalonSRX leftFrontTalon = new TalonSRX(HWR.LEFT_DRIVE_TRAIN_FRONT, false);
@@ -54,7 +57,7 @@ public class Team3861 extends IterativeRobot {
 	
 	@Override
 	public void autonomousInit() {
-		autonomous = new AutonomousRunner(drive);
+		autonomous = new AutonomousRunner(drive, shooter);
 	}
 
 	@Override
