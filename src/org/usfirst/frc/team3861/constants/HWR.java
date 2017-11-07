@@ -21,19 +21,10 @@ public class HWR {
 	public static final int GYRO = HWP.ANALOG_1;
 
 	// joystick buttons
-	public static final int FULL_POWER = HWP.BUTTON_11;
-	public static final int SECOND_POWER = HWP.BUTTON_6;
+	public static final int PUSH_SHOOTER = HWP.BUTTON_3;
+	public static final int PULL_SHOOTER = HWP.BUTTON_2;
 
 	public static final int OVERRIDE_TIMER = HWP.BUTTON_9;
 	
-	// ball controller
-<<<<<<< HEAD
-	public static final int FLYWHEEL= -99; //TODO get real number
-	public static final int BELT = -99; //TODO get real number
-	public static final int SHOOTER = -99;
-=======
-	public static final int SHOOTER= -99; //TODO get real number
-	public static final int DOOR = -99; //TODO get real number
->>>>>>> refs/remotes/origin/master
 	
 }
