@@ -7,6 +7,7 @@ public class HWR {
 	public static final int RIGHT_DRIVE_TRAIN_BACK = HWP.CAN_9;
 	public static final int LEFT_DRIVE_TRAIN_FRONT = HWP.CAN_6;
 	public static final int LEFT_DRIVE_TRAIN_BACK = HWP.CAN_4;
+	public static final int DOOR = HWP.CAN_0; //FIX ME
 	
 	// encoders
 	public static final int LEFT_DRIVE_ENCODER = HWP.CAN_7;

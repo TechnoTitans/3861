@@ -71,12 +71,13 @@ public class Team3861 extends IterativeRobot {
 
 	@Override
 	public void autonomousPeriodic() {
+		autonomous.run();
 
 	}
 
 	@Override
 	public void teleopInit() {
-
+		shooter.pullInShooter();
 	}
 
 	@Override

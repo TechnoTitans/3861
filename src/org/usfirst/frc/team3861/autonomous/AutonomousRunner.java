@@ -25,7 +25,7 @@ public class AutonomousRunner {
 		drive.set(0.4);
 		if(distance >= MAX_DISTANCE) {
 			drive.stop();
-			shooter.shoot();
+			shooter.pushOutShooter();
 		}
 	}
 	
