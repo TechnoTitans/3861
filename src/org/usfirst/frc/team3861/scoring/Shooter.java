@@ -31,7 +31,6 @@ public class Shooter {
 			solenoid.set(false);
 			timer.stop();
 			timer.reset();
-			timer.start();
 		}
 		
 	}
