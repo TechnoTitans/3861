@@ -1,8 +1,6 @@
 package org.usfirst.frc.team3861.autonomous;
 
 import org.usfirst.frc.team3861.driveTrain.TankDrive;
-import org.usfirst.frc.team3861.scoring.Belt;
-import org.usfirst.frc.team3861.scoring.Flywheel;
 import org.usfirst.frc.team3861.sensors.Encoder;
 
 public class Autonomous {
@@ -10,10 +8,9 @@ public class Autonomous {
 	TankDrive drive;
 	Encoder leftEncoder;
 	Encoder rightEncoder;
-	Flywheel flywheel;
-	Belt belt;
+
 	
-	public Autonomous(TankDrive tankDrive, Flywheel flywheel, Belt belt) {
+	public Autonomous(TankDrive tankDrive) {
 		this.drive = tankDrive;
 		leftEncoder = tankDrive.getLeftEncoder();
 		rightEncoder = tankDrive.getRightEncoder();

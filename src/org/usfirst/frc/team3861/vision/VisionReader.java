@@ -18,4 +18,7 @@ public class VisionReader {
 	public double getAngle() {
 		return (double) table.getNumber("angle", 0.0); 
 	}
+	public boolean isGoalInView() {
+		return (boolean) table.getBoolean("found", false);				
+	}
 }

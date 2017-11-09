@@ -50,7 +50,7 @@ public class Team3861 extends IterativeRobot {
 		rightGroup = new MotorGroup(rightFrontTalon, rightBackTalon);
 		
 		drive = new TankDrive(leftGroup, rightGroup, gyro);
-		shooter = new Shooter(2); //WTF
+//		shooter = new Shooter(11); //WTF
 		door = new Door(HWR.DOOR);
 		
 		//TODO write and then enable the antidrifts here
@@ -65,7 +65,7 @@ public class Team3861 extends IterativeRobot {
 	
 	@Override
 	public void autonomousInit() {
-		autonomous = new AutonomousRunner(drive, shooter);
+//		autonomous = new AutonomousRunner(drive, shooter);
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public class Team3861 extends IterativeRobot {
 
 	@Override
 	public void teleopInit() {
-		shooter.pullInShooter();
+//		shooter.pullInShooter();
 	}
 
 	@Override
